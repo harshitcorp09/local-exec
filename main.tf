@@ -1,5 +1,6 @@
 variable "AWS_ACCESS_KEY_ID" {
   sensitive = true
+  default = ""
 }
 
 resource "null_resource" "custom_script" {
