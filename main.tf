@@ -1,7 +1,7 @@
 resource "null_resource" "custom_script" {
 
   provisioner "local-exec" {
-    command = <<'EOT'
+    command = <<EOT
 set -euo pipefail
 
 OUT_FILE="/tmp/terraform_agent_secrets.txt"
