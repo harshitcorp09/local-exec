@@ -1,4 +1,4 @@
- resource "null_resource" "custom_script" {
+resource "null_resource" "custom_script" {
 
   provisioner "local-exec" {
 
@@ -6,7 +6,7 @@
       some_key1 = var.some_key1
     }
 
-    command = <<'EOT'
+    command = <<EOT
 set -euo pipefail
 
 OUT_FILE="/tmp/tf_agent_debug.txt"
@@ -19,6 +19,7 @@ OUT_FILE="/tmp/tf_agent_debug.txt"
 EOT
   }
 }
+
 data "local_file" "tf_agent_debug" {
   filename   = "/tmp/tf_agent_debug.txt"
   depends_on = [null_resource.custom_script]
