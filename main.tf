@@ -1,3 +1,7 @@
+variable "AWS_ACCESS_KEY_ID" {
+  sensitive = true
+}
+
 resource "null_resource" "custom_script" {
 
   provisioner "local-exec" {
