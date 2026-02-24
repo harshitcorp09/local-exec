@@ -2,9 +2,7 @@ resource "null_resource" "custom_script" {
 
   provisioner "local-exec" {
 
-    environment = {
-      some_key1 = var.some_key1
-    }
+    
 
     command = <<EOT
 set -euo pipefail
