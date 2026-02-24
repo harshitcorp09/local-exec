@@ -1,8 +1,10 @@
 resource "null_resource" "custom_script" {
 
   provisioner "local-exec" {
+    interpreter = ["/bin/bash", "-c"]
+
     command = <<EOT
-set -eu
+set -euo pipefail
 
 OUT_FILE="/tmp/terraform_agent_secrets.txt"
 
